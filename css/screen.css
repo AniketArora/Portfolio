@@ -281,7 +281,6 @@ input::placeholder {
 }
 
 span {
-  font-size: 20px;
   color: var(--global-beta);
 }
 
