@@ -592,6 +592,42 @@ li {
   padding-left: 64px;
 }
 
+.c-content__project__Right {
+  display: flex;
+  flex-flow: row;
+}
+
+.c-project__content {
+  z-index: 4;
+  text-align: right;
+  margin-top: 32px;
+}
+
+.c-project__label {
+  font-weight: 700;
+  color: var(--global-beta);
+  margin-top: 24px;
+}
+
+.c-project__name {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.c-project__details {
+  background-color: var(--global-beta);
+  padding: 24px;
+  margin-left: -80px;
+}
+
+.c-project__labels {
+  margin-top: 24px;
+}
+
+.c-project__links {
+  margin-top: 16px;
+}
+
 /*
     Component: custom toggle
     ---
