@@ -597,10 +597,28 @@ li {
   flex-flow: row;
 }
 
+.c-content__project__Left {
+  display: flex;
+  flex-flow: row;
+}
+
 .c-project__content {
   z-index: 4;
-  text-align: right;
   margin-top: 32px;
+}
+
+.c-project_img {
+  box-shadow: var(--shadow-box);
+}
+
+.c-content__project__Right .c-project__content {
+  text-align: right;
+  margin-bottom: 128px;
+}
+
+.c-content__project__Left .c-project__content {
+  text-align: left;
+  margin-bottom: 128px;
 }
 
 .c-project__label {
@@ -617,6 +635,14 @@ li {
 .c-project__details {
   background-color: var(--global-beta);
   padding: 24px;
+  box-shadow: var(--shadow-box);
+}
+
+.c-content__project__Left .c-project__details {
+  margin-right: -80px;
+}
+
+.c-content__project__Right .c-project__details {
   margin-left: -80px;
 }
 
