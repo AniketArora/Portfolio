@@ -738,6 +738,53 @@ li {
   margin-left: -6px;
 }
 
+.c-content__grid {
+  display: grid;
+  grid-gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+
+@media (min-width: 992px) {
+  .c-content__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .c-content__row {
+    grid-column: span 3;
+  }
+}
+
+.c-content__cube {
+  background-color: var(--global-beta);
+  height: 336px;
+  padding: 32px;
+  position: relative;
+}
+
+.c-cube__icons {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.c-cube__title {
+  margin-top: 24px;
+  font-size: 32px;
+}
+
+.c-cube__text {
+  margin-top: 16px;
+}
+
+.c-cube__labels {
+  font-size: 12px;
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
