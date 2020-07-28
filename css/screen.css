@@ -33,6 +33,9 @@
   --global-white: #ffffff;
   --global-beta: #23bbff;
 
+  --global-selection: var(--global-alpha);
+  --global-selection-background: var(--global-beta);
+
   --global-color-alpha-transparent: #1d3f4ebf;
   --global-color-alpha-x-transparent: #1d3f4e4d;
 
@@ -794,6 +797,50 @@ li {
 }
 
 .c-content__timeline {
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid white;
+  border-radius: 2px;
+  padding: 8px 32px;
+}
+
+.c-contact__title {
+  display: flex;
+  flex-flow: row;
+}
+
+.c-title__left {
+  margin-left: 0;
+  width: 100%;
+}
+
+.c-title__right {
+  margin-right: 0;
+  width: 100%;
+}
+
+.c-title__text {
+  font-size: 40px;
+}
+
+.c-content__head {
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.c-content__text {
+  width: 75%;
+  margin: auto;
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.c-content__contact {
   text-decoration: none;
   font-size: 24px;
   border: 2px solid white;
