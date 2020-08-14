@@ -315,6 +315,8 @@ li {
     Creates a horizontal container that sets de global max-width
 */
 
+
+
 .o-container {
   margin-left: auto;
   margin-right: auto;
@@ -423,10 +425,17 @@ li {
 }
 
 .c-header__nav {
-  position: fixed;
-  right: 200px;
-  display: flex;
+  display: none;
 }
+
+@media (min-width: 992px) {
+  .c-header__nav {
+    position: fixed;
+    right: 60px;
+    display: flex;
+  }
+}
+
 
 .c-nav__line {
   content: "";
@@ -444,11 +453,17 @@ li {
 }
 
 .c-left__content {
-  position: fixed;
-  bottom: 40px;
-  left: 80px;
-  display: flex;
-  flex-flow: column;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .c-left__content {
+    position: fixed;
+    bottom: 40px;
+    left: 80px;
+    display: flex;
+    flex-flow: column;
+  }
 }
 
 .c-left__item {
@@ -511,7 +526,8 @@ li {
 }
 
 .c-top__face {
-  width: 400px;
+  max-height: 400px;
+  margin: auto;
 }
 
 .c-top__text {
@@ -527,6 +543,16 @@ li {
   text-align: center;
 }
 
+.c-top__left {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .c-top__left {
+    display: flex;
+  }
+}
+
 .c-top__right {
   margin-left: 40px;
   display: flex;
@@ -535,16 +561,48 @@ li {
 }
 
 .c-container__content {
-  margin-top: 320px;
+  margin-top: 100px;
+}
+
+@media (min-width: 425px) {
+  .c-container__content {
+    margin-top: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .c-container__content {
+    margin-top: 360px;
+  }
 }
 
 .c-content {
   display: block;
+  margin: 0 24px;
+}
+
+@media (min-width: 992px) {
+  .c-content {
+    margin: auto;
+  }
 }
 
 .c-content__about {
   display: flex;
+  flex-flow: column-reverse;
 }
+
+@media (min-width: 992px) {
+  .c-content__about {
+    flex-flow: row;
+  }
+}
+
+.c-content__right {
+  display: flex;
+  justify-content: center;
+}
+
 
 .c-content__title {
   font-size: 40px;
@@ -556,11 +614,17 @@ li {
 
 .c-content__line {
   content: "";
-  display: block;
+  display: none;
   height: 2px;
   width: 400px;
   background-color: white;
   margin: auto 32px;
+}
+
+@media (min-width: 992px) {
+  .c-content__line {
+    display: block;
+  }
 }
 
 .c-content__empty {
@@ -570,7 +634,13 @@ li {
 }
 
 .c-content__projects {
-  margin-top: 160px;
+  margin-top: 80px;
+}
+
+@media (min-width: 992px) {
+  .c-content__projects {
+    margin-top: 160px;
+  }
 }
 
 .c-projects__title {
@@ -592,17 +662,33 @@ li {
 }
 
 .c-list__right {
-  padding-left: 64px;
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+  .c-list__right {
+    padding-left: 64px;
+  }
 }
 
 .c-content__project__Right {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
 }
 
 .c-content__project__Left {
   display: flex;
-  flex-flow: row;
+  flex-flow: column-reverse;
+}
+
+@media (min-width: 992px) {
+  .c-content__project__Right {
+    flex-flow: row;
+  }
+
+  .c-content__project__Left {
+    flex-flow: row;
+  }
 }
 
 .c-project__content {
@@ -615,13 +701,25 @@ li {
 }
 
 .c-content__project__Right .c-project__content {
-  text-align: right;
-  margin-bottom: 128px;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .c-content__project__Left .c-project__content {
-  text-align: left;
-  margin-bottom: 128px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 992px) {
+  .c-content__project__Right .c-project__content {
+    text-align: right;
+    margin-bottom: 128px;
+  }
+
+  .c-content__project__Left .c-project__content {
+    text-align: left;
+    margin-bottom: 128px;
+  }
 }
 
 .c-project__label {
@@ -641,12 +739,14 @@ li {
   box-shadow: var(--shadow-box);
 }
 
-.c-content__project__Left .c-project__details {
-  margin-right: -80px;
-}
+@media (min-width: 992px) {
+  .c-content__project__Left .c-project__details {
+    margin-right: -80px;
+  }
 
-.c-content__project__Right .c-project__details {
-  margin-left: -80px;
+  .c-content__project__Right .c-project__details {
+    margin-left: -80px;
+  }
 }
 
 .c-project__labels {
@@ -796,6 +896,12 @@ li {
   margin-bottom: 128px;
 }
 
+@media (min-width: 992px) {
+  .c-content__button {
+    margin-bottom: 80px;
+  }
+}
+
 .c-content__timeline {
   text-decoration: none;
   font-size: 24px;
@@ -828,6 +934,7 @@ li {
   display: flex;
   justify-content: center;
   margin-top: 80px;
+  text-align: center;
 }
 
 .c-content__text {
@@ -846,6 +953,11 @@ li {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+}
+
+.c-title__text {
+  text-align: center;
+  width: 100%;
 }
 
 /*------------------------------------*\
