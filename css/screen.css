@@ -691,7 +691,7 @@ li {
   padding-left: 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .c-list__right {
     padding-left: 64px;
   }
