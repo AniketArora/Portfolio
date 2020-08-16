@@ -608,6 +608,12 @@ li {
   }
 }
 
+@media (min-width: 992px) {
+  .c-container__content {
+    margin-top: 360px;
+  }
+}
+
 .c-content {
   display: block;
   margin: 0 24px;
