@@ -176,7 +176,7 @@ img {
 h1,
 h2,
 h3 {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h1 {
@@ -562,6 +562,7 @@ li {
   font-size: 48px;
   font-weight: 500;
   text-align: center;
+  line-height: normal;
 }
 
 @media (min-width: 375px) {
@@ -641,6 +642,9 @@ li {
   justify-content: center;
 }
 
+.c-content__name {
+  line-height: normal;
+}
 
 .c-content__title {
   font-size: 40px;
@@ -767,6 +771,7 @@ li {
 }
 
 .c-project__name {
+  line-height: normal;
   font-size: 32px;
   margin-bottom: 16px;
 }
