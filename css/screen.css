@@ -201,9 +201,8 @@ h4,
 h5,
 h6 {
   font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  margin: 0 0 24px;
+  font-weight: 500;
+  margin: 0;
 }
 
 p,
@@ -688,6 +687,10 @@ li {
 .c-projects__title {
   display: flex;
   justify-content: space-between;
+}
+
+.c-about__title {
+  display: none;
 }
 
 .c-about__list {
