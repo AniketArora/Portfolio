@@ -1069,6 +1069,16 @@ li {
   width: 100%;
 }
 
+.c-show-navbar {
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+.c-hide-navbar {
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
