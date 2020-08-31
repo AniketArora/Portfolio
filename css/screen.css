@@ -32,6 +32,7 @@
   --global-alpha: #1d3f4e;
   --global-white: #ffffff;
   --global-beta: #23bbff;
+  --global-black: #000000;
 
   --global-selection: var(--global-alpha);
   --global-selection-background: var(--global-beta);
@@ -459,6 +460,24 @@ li {
   color: white;
 }
 
+.c-logo {
+  fill: white;
+}
+
+.c-logo:hover,
+.c-logo:active {
+  fill: var(--global-black);
+}
+
+.c-header__logo {
+  fill: white;
+}
+
+.c-header__logo:hover,
+.c-header__logo:active {
+  fill: var(--global-black);
+}
+
 .c-left__content {
   display: none;
 }
@@ -475,6 +494,12 @@ li {
 
 .c-left__item {
   margin: 16px 0;
+  fill: white;
+}
+
+.c-left__item:hover,
+.c-left__item:active {
+  fill: var(--global-black);
 }
 
 .c-left__line {
@@ -497,6 +522,11 @@ li {
   border: 2px solid white;
   padding: 8px 24px;
   border-radius: 2px;
+}
+
+.c-nav__item--button:hover,
+.c-nav__item--button:active {
+  border: 2px solid black;
 }
 
 .c-top__background {
@@ -523,6 +553,11 @@ li {
 
 .c-nav__item {
   font-size: 20px;
+}
+
+.c-nav__item:hover,
+.c-nav__item:active {
+  color: var(--global-black);
 }
 
 .c-top__content {
@@ -802,6 +837,21 @@ li {
 
 .c-project__links {
   margin-top: 16px;
+  fill: white;
+}
+
+.c-project__links:hover,
+.c-project__links:active {
+  fill: var(--global-black);
+}
+
+.c-project__link {
+  fill: white;
+}
+
+.c-project__link:hover,
+.c-project__link:active {
+  fill: var(--global-black);
 }
 
 /*
@@ -957,6 +1007,12 @@ li {
   padding: 8px 32px;
 }
 
+.c-content__timeline:hover,
+.c-content__timeline:active {
+  border-color: var(--global-black);
+  color: var(--global-black);
+}
+
 .c-contact__title {
   display: flex;
   flex-flow: row;
@@ -1000,6 +1056,12 @@ li {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+}
+
+.c-content__contact:hover,
+.c-content__contact:active {
+  border-color: var(--global-black);
+  color: var(--global-black);
 }
 
 .c-title__text {
