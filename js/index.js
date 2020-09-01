@@ -7,19 +7,19 @@ const scrollAnimation = function() {
         if (st < lastScrollTop) {
             console.log("Scrolldown");
 
-            if (document.querySelector(".c-header").classList.contains("c-hide-navbar") == true) {
-                document.querySelector(".c-header").classList.remove("c-hide-navbar");
+            if (document.querySelector(".c-header__nav").classList.contains("c-hide-navbar") == true) {
+                document.querySelector(".c-header__nav").classList.remove("c-hide-navbar");
             }
 
-            document.querySelector(".c-header").classList.add("c-show-navbar");
+            document.querySelector(".c-header__nav").classList.add("c-show-navbar");
 
         } else {
             console.log("Scroll up");
 
-            if (document.querySelector(".c-header").classList.contains("c-show-navbar") == true) {
-                document.querySelector(".c-header").classList.remove("c-show-navbar");
+            if (document.querySelector(".c-header__nav").classList.contains("c-show-navbar") == true) {
+                document.querySelector(".c-header__nav").classList.remove("c-show-navbar");
             }
-            document.querySelector(".c-header").classList.add("c-hide-navbar");
+            document.querySelector(".c-header__nav").classList.add("c-hide-navbar");
         }
         lastScrollTop = st <= 0 ? 0 : st;
 

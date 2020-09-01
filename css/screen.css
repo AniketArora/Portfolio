@@ -23,6 +23,7 @@
   font-display: swap;
 }
 
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -33,13 +34,10 @@
   --global-white: #ffffff;
   --global-beta: #23bbff;
   --global-black: #000000;
-
   --global-selection: var(--global-alpha);
   --global-selection-background: var(--global-beta);
-
   --global-color-alpha-transparent: #1d3f4ebf;
   --global-color-alpha-x-transparent: #1d3f4e4d;
-
   --global-color-neutral-xxxx-light: #f5f6fa;
   --global-color-neutral-xxx-light: #e2e3e7;
   --global-color-neutral-xx-light: #caccd4;
@@ -54,32 +52,25 @@
   --global-color-error: #ff3333;
   --global-color-error-transparent: #ff3333bf;
   --global-color-error-x-transparent: #ff33334d;
-
   /* Font weights */
   --global-default-weight: 500;
-
   /* Shadows */
   --shadow-neutral: 0 2px 6px rgba(0, 0, 0, 0.04);
   --shadow-box: 0 3px 6px rgba(0, 0, 0, 0.2);
   --shadow-box-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
-
   /* border radius */
   --global-borderRadius: 3px;
   --global-borderWidth: 1px;
-
   /* transitions */
   --global-transitionEasing-out: ease-out;
   --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
   --global-transitionDuration-alpha: 0.1s;
   --global-transitionDuration-beta: 0.2s;
   --global-transitionDuration-gamma: 0.3s;
-
   /* Grid System */
-
   --global-baseline: 8px;
   --global-whitespace: calc(var(--global-baseline) * 3);
   /* 24 px */
-
   --global-whitespace-xs: calc(var(--global-baseline) * 0.5);
   /* 4 px */
   --global-whitespace-sm: calc(var(--global-baseline) * 1);
@@ -92,7 +83,6 @@
   /* 48 px */
   --global-whitespace-xxl: calc(var(--global-whitespace) * 3);
   /* 72 px */
-
   --global-label-color: var(--global-color-neutral-xx-dark);
   --global-placeholder-color: var(--global-color-neutral-x-light);
   --global-input-backgroundColor: var(--global-white);
@@ -106,9 +96,11 @@
   --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
+
 /*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
+
 
 /*
     Generic: Page
@@ -126,6 +118,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--global-alpha);
+  scroll-behavior: smooth;
 }
 
 *,
@@ -133,6 +126,7 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
 
 /*
 * Remove text-shadow in selection highlight:
@@ -153,9 +147,11 @@ html {
   text-shadow: none;
 }
 
+
 /*------------------------------------*\
 #Elements
 \*------------------------------------*/
+
 
 /*
 Elements: Images
@@ -167,6 +163,7 @@ img {
   max-width: 100%;
   vertical-align: top;
 }
+
 
 /*
     Elements: typography
@@ -294,9 +291,11 @@ li {
   margin: 0;
 }
 
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
+
 
 /*
     Objects: Row
@@ -309,13 +308,12 @@ li {
   padding: 24px 24px 0;
 }
 
+
 /*
     Objects: Container
     ---
     Creates a horizontal container that sets de global max-width
 */
-
-
 
 .o-container {
   margin-left: auto;
@@ -324,6 +322,7 @@ li {
   /* 100 * 16px = 1600 */
   width: 100%;
 }
+
 
 /*
     Objects: List
@@ -335,6 +334,7 @@ li {
   list-style: none;
   padding: 0;
 }
+
 
 /*
     Object: Button reset
@@ -349,21 +349,18 @@ li {
   width: auto;
   overflow: visible;
   background: transparent;
-
   /* inherit font & color from ancestor */
   color: inherit;
   font: inherit;
-
   /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
   line-height: normal;
-
   /* Corrects font smoothing for webkit */
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
-
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
 }
+
 
 /*
     Object: Hide accessible
@@ -382,6 +379,7 @@ li {
   border: 0;
 }
 
+
 /*
     Object: Button reset
     ---
@@ -395,26 +393,22 @@ li {
   width: auto;
   overflow: visible;
   background: transparent;
-
   /* inherit font & color from ancestor */
   color: inherit;
   font: inherit;
-
   /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
   line-height: normal;
-
   /* Corrects font smoothing for webkit */
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
-
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
 }
 
+
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
-
 
 .c-header {
   position: fixed;
@@ -443,7 +437,6 @@ li {
     display: flex;
   }
 }
-
 
 .c-nav__line {
   content: "";
@@ -535,7 +528,7 @@ li {
   left: 0;
   height: 75%;
   width: 100%;
-  background-image: url('../assets/images/Background.jpg');
+  background-image: url('../assets/images/Background_33.png');
   background-size: cover;
   background-position: center center;
 }
@@ -854,6 +847,7 @@ li {
   fill: var(--global-black);
 }
 
+
 /*
     Component: custom toggle
     ---
@@ -908,6 +902,7 @@ li {
   transition: var(--toggle__switch-transition);
 }
 
+
 /* focused and active state */
 
 .c-option--hidden:focus+.c-custom-toggle,
@@ -915,6 +910,7 @@ li {
   --toggle-borderColor: var(--toggle-focus-borderColor);
   --toggle-boxShadow: var(--toggle-focus-boxShadow);
 }
+
 
 /* checked state */
 
@@ -927,6 +923,7 @@ li {
 .c-option--hidden:checked+.c-custom-toggle .c-custom-toggle__fake-input::after {
   transform: translate(24px, 0);
 }
+
 
 /* special active state */
 
@@ -944,7 +941,6 @@ li {
   margin-top: 40px;
   margin-bottom: 80px;
 }
-
 
 @media (min-width: 992px) {
   .c-content__grid {
@@ -1079,9 +1075,15 @@ li {
   transition: all .3s ease-in-out;
 }
 
+.c-hide-navbar a {
+  cursor: default;
+}
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+
 
 /*
     Utilities: grid
@@ -1207,6 +1209,7 @@ li {
   }
 }
 
+
 /*
     Utilities: color
     ---
@@ -1220,6 +1223,7 @@ li {
 .u-color-neutral-dark {
   color: var(--color-neutral-dark);
 }
+
 
 /*
     Utilities: spacing
@@ -1255,6 +1259,7 @@ li {
   margin-bottom: 48px !important;
 }
 
+
 /*
     Utilities: max-width
     ---
@@ -1281,6 +1286,7 @@ li {
   max-width: none !important;
 }
 
+
 /*
     Utilities: align
     ---
@@ -1295,6 +1301,7 @@ li {
   margin: 0 auto;
 }
 
+
 /*
     Utilities: text
     Utility classes to create smaller or bigger test
@@ -1308,9 +1315,11 @@ li {
   display: none !important;
 }
 
+
 /*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
+
 
 /*
     Media Queries
@@ -1320,25 +1329,31 @@ li {
     USE THEM INLINE!
 */
 
+
 /* Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in mobile first design
 */
+
 
 /* Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 */
 
+
 /* Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {}
 */
+
 
 /* Large devices (landscape tablets, desktops, 992px and up)
 @media (min-width: 992px) {}
 */
 
+
 /* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
+
 
 /*
     Print styles.
