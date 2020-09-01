@@ -1,38 +1,35 @@
-const scrollAnimation = function () {
-    document.addEventListener("scroll", function () {
+const scrollAnimation = function() {
+    var lastScrollTop = 0;
+
+    document.addEventListener("scroll", function() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (st > lastScrollTop) {
-            if (
-                document
-                .querySelector(".c-header")
-                .classList.contains(".c-hide-navbar")
-            ) {
-                document
-                    .querySelector(".c-header")
-                    .classList.remove(".c-hide-navbar");
+        if (st < lastScrollTop) {
+            console.log("Scrolldown");
+
+            if (document.querySelector(".c-header").classList.contains("c-hide-navbar") == true) {
+                document.querySelector(".c-header").classList.remove("c-hide-navbar");
             }
 
-            document.querySelector(".c-header").classList.add(".c-show-navbar");
+            document.querySelector(".c-header").classList.add("c-show-navbar");
+
         } else {
-            if (
-                document
-                .querySelector(".c-header")
-                .classList.contains(".c-show-navbar")
-            ) {
-                document
-                    .querySelector(".c-header")
-                    .classList.remove(".c-show-navbar");
-            }
+            console.log("Scroll up");
 
-            document.querySelector(".c-header").classList.add(".c-hide-navbar");
+            if (document.querySelector(".c-header").classList.contains("c-show-navbar") == true) {
+                document.querySelector(".c-header").classList.remove("c-show-navbar");
+            }
+            document.querySelector(".c-header").classList.add("c-hide-navbar");
         }
-    });
+        lastScrollTop = st <= 0 ? 0 : st;
+
+        console.log("Updated nav")
+    }, false);
 };
 
-const init = function () {
+const init = function() {
     console.log("Dom loaded");
     scrollAnimation();
 };
 
-document.addEventListener("DomContentLoaded", init);
+document.addEventListener('DOMContentLoaded', init);
