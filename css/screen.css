@@ -1079,6 +1079,12 @@ li {
   cursor: default;
 }
 
+/*
+    Component: Cookies
+    ---
+    Cookie banner
+*/
+
 .c-cookies {
   position: fixed;
   background-color: var(--global-beta);
