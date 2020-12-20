@@ -1079,6 +1079,52 @@ li {
   cursor: default;
 }
 
+.c-cookies {
+  position: fixed;
+  background-color: var(--global-beta);
+  bottom: 32px;
+  left: 50%;
+  width: 384px;
+  margin-left: -192px;
+  box-shadow: var(--shadow-box);
+}
+
+@media (min-width: 992px) {
+  .c-cookies {
+    left: 128px;
+    margin-left: 0;
+  }
+}
+
+.c-cookies__content {
+    margin: 32px;
+    padding-bottom: 8px;
+}
+
+.c-cookies__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--global-alpha);
+}
+
+.c-cookies__hidden {
+  display: none;
+}
+
+.c-cookies-confirmed {
+  padding: 8px 24px;
+  color: var(--global-alpha);
+  border: 2px solid var(--global-alpha);
+  border-radius: 2px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.c-cookies-confirmed:hover {
+  color: var(--global-white);
+  border: 2px solid var(--global-white);
+  cursor: pointer;
+}
 
 /*------------------------------------*\
 #UTILITIES
