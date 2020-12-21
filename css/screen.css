@@ -1099,6 +1099,7 @@ li {
 @media (min-width: 992px) {
   .c-cookies {
     left: 128px;
+    bottom: 64px;
     margin-left: 0;
   }
 }
