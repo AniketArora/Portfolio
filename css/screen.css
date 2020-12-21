@@ -1093,6 +1093,7 @@ li {
   width: 384px;
   margin-left: -192px;
   box-shadow: var(--shadow-box);
+  z-index: 2;
 }
 
 @media (min-width: 992px) {
