@@ -22,9 +22,15 @@ const scrollAnimation = function() {
 };
 
 const cookiebanner = function() {
+    var storage = window.localStorage;
+    if (storage.getItem("cookies") == null) {
+        document.querySelector(".c-cookies").classList.remove("c-cookies__hidden");
+    }
+
     var button = document.querySelector(".c-cookies-confirmed");
     button.addEventListener('click', function(){
         document.querySelector(".c-cookies").classList.add("c-cookies__hidden");
+        storage.setItem("cookies", true);
     });
 }
 
