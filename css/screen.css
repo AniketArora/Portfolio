@@ -558,6 +558,9 @@ li {
 }
 
 .c-top__face {
+  width: auto;
+  height: auto;
+  max-width: 100%;
   max-height: 300px;
   margin: auto;
 }
@@ -600,6 +603,7 @@ li {
 
 .c-top__left {
   display: flex;
+  justify-content: center;
 }
 
 .c-top__right {
