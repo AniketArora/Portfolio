@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /portfolio
-
 Sitemap: https://aniketarora.be/sitemap.xml
