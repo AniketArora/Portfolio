@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
 import { Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../css/normalize.css";
 import "../css/screen.css";
 import "aos/dist/aos.css";
@@ -64,6 +66,8 @@ export default function RootLayout({
     <html lang="en" className={roboto.variable}>
       <body>
         {children}
+        <Analytics />
+        <SpeedInsights />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
