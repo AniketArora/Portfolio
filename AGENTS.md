@@ -3,9 +3,10 @@
 ## Project Structure & Module Organization
 - `app/` contains the Next.js App Router entry points: `layout.tsx` (metadata and global styles) and `page.tsx` (main markup).
 - `app/components/` holds client-only behavior (navbar scroll hide/show, cookie banner).
+- `app/robots.ts` and `app/sitemap.ts` generate SEO metadata routes.
 - `css/` holds styles: `normalize.css` (vendor reset) and `screen.css` (site styles and variables) imported in `app/layout.tsx`.
 - `public/assets/images/` stores site imagery used in the portfolio cards and social previews.
-- `public/` contains static assets like favicons, `site.webmanifest`, `sitemap.xml`, `robots.txt`, and `Resume.pdf`.
+- `public/` contains static assets like favicons, `site.webmanifest`, and `Resume.pdf`.
 
 ## Build, Test, and Development Commands
 This repo is a Next.js app.
@@ -31,7 +32,7 @@ No automated tests are present. Manually verify:
 ## Commit & Pull Request Guidelines
 - Commit messages in history are short, sentence-case, and verb-led (e.g., “Update portfolio content and layout”).
 - For PRs, include a concise summary, note manual testing performed, and attach screenshots/GIFs for UI changes.
-- If you change URLs, social images, or metadata, update `public/sitemap.xml` and the Open Graph/Twitter tags in `app/layout.tsx`.
+- If you change URLs, social images, or metadata, update `app/sitemap.ts` and the Open Graph/Twitter tags in `app/layout.tsx`.
 
 ## Security & Configuration Notes
 - Google Analytics is loaded via CDN. If you replace it, update the `<head>` links and verify CSP or privacy requirements as needed.
