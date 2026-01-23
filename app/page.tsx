@@ -254,11 +254,15 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <article
-              className="c-content__project__Right"
+              <article
+                className="c-content__project__Right"
             >
               <div className="c-project__img">
-                <img className="c-project__img--ml6" src="/assets/images/Office_Of_The_Future.png" alt="" />
+                <img
+                  className="c-project__img--ml6"
+                  src="/assets/images/Office_Of_The_Future.png"
+                  alt="Office of the Future project interface preview"
+                />
               </div>
               <div className="c-project__content">
                 <div className="c-project__label">Featured</div>
@@ -299,7 +303,11 @@ export default function HomePage() {
               </div>
 
               <div className="c-project__img">
-                <img className="c-project__img--Snek" src="/assets/images/Snek.png" alt="" />
+                <img
+                  className="c-project__img--Snek"
+                  src="/assets/images/Snek.png"
+                  alt="Snek exergame interface preview"
+                />
               </div>
             </article>
 
@@ -307,7 +315,11 @@ export default function HomePage() {
               className="c-content__project__Right"
             >
               <div className="c-project__img">
-                <img className="c-project__img--ml6" src="/assets/images/Krypto.png" alt="" />
+                <img
+                  className="c-project__img--ml6"
+                  src="/assets/images/Krypto.png"
+                  alt="Krypto cryptocurrency charting interface preview"
+                />
               </div>
               <div className="c-project__content">
                 <div className="c-project__label">Featured</div>
@@ -332,7 +344,7 @@ export default function HomePage() {
               className="c-content__left"
             >
               <div className="c-content__title">
-                <h2 className="c-content__name" id="About">
+                <h2 className="c-content__name" id="OtherProjects">
                   Other Projects.
                 </h2>
                 <div className="c-content__line"></div>
