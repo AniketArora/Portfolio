@@ -18,14 +18,7 @@ export default function CookieBanner() {
   };
 
   return (
-    <div
-      className={`c-cookies ${isHidden ? "c-cookies__hidden" : ""}`}
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-sine"
-      data-aos-once="true"
-      data-aos-delay="0"
-    >
+    <div className={`c-cookies ${isHidden ? "c-cookies__hidden" : ""}`}>
       <div className="c-cookies__content">
         <h1 className="c-cookies__title">This site uses cookies</h1>
         <p>

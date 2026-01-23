@@ -6,7 +6,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../css/normalize.css";
 import "../css/screen.css";
-import "aos/dist/aos.css";
 
 const GA_ID = "G-Y6R2ZEYDZ9";
 

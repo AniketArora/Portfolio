@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 - `app/` contains the Next.js App Router entry points: `layout.tsx` (metadata and global styles) and `page.tsx` (main markup).
-- `app/components/` holds client-only behavior (navbar scroll hide/show, cookie banner, AOS init).
+- `app/components/` holds client-only behavior (navbar scroll hide/show, cookie banner).
 - `css/` holds styles: `normalize.css` (vendor reset) and `screen.css` (site styles and variables) imported in `app/layout.tsx`.
 - `public/assets/images/` stores site imagery used in the portfolio cards and social previews.
 - `public/` contains static assets like favicons, `site.webmanifest`, `sitemap.xml`, `robots.txt`, and `Resume.pdf`.
@@ -25,7 +25,6 @@ This repo is a Next.js app.
 No automated tests are present. Manually verify:
 - Navbar hide/show behavior on scroll.
 - Cookie banner visibility and localStorage persistence.
-- AOS animations initialize (no console errors).
 - Responsive layout across common breakpoints.
 - Console for JS errors and 404s on assets.
 

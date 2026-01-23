@@ -1,11 +1,9 @@
-import AosProvider from "./components/AosProvider";
 import CookieBanner from "./components/CookieBanner";
 import ScrollNavbar from "./components/ScrollNavbar";
 
 export default function HomePage() {
   return (
     <>
-      <AosProvider />
       <ScrollNavbar />
       <nav className="c-header">
         <div className="c-header__logo">
@@ -84,11 +82,6 @@ export default function HomePage() {
           </div>
           <div
             className="c-top__content"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine"
-            data-aos-once="true"
-            data-aos-delay="0"
           >
             <div className="c-top__left">
               <picture>
@@ -115,11 +108,6 @@ export default function HomePage() {
         <div className="c-content">
           <section
             className="c-content__about"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine"
-            data-aos-once="true"
-            data-aos-delay="0"
           >
             <div className="c-content__left">
               <div className="c-content__title">
@@ -156,11 +144,6 @@ export default function HomePage() {
             </div>
             <div
               className="c-content__right"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <img
                 src="/assets/images/undraw_programming_2svr.svg"
@@ -172,11 +155,6 @@ export default function HomePage() {
           </section>
           <section
             className="c-content__projects c-content__experience"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine"
-            data-aos-once="true"
-            data-aos-delay="0"
           >
             <div className="c-projects__title">
               <div className="c-content__left">
@@ -227,11 +205,6 @@ export default function HomePage() {
 
           <section
             className="c-content__projects c-content__education"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine"
-            data-aos-once="true"
-            data-aos-delay="0"
           >
             <div className="c-education__layout">
               <div className="c-education__text">
@@ -268,11 +241,6 @@ export default function HomePage() {
           <section className="c-content__projects">
             <div
               className="c-projects__title"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-content__left">
                 <div className="c-content__empty"></div>
@@ -288,11 +256,6 @@ export default function HomePage() {
             </div>
             <article
               className="c-content__project__Right"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-project__img">
                 <img className="c-project__img--ml6" src="/assets/images/Office_Of_The_Future.png" alt="" />
@@ -317,11 +280,6 @@ export default function HomePage() {
 
             <article
               className="c-content__project__Left"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-project__content">
                 <div className="c-project__label">Featured</div>
@@ -347,11 +305,6 @@ export default function HomePage() {
 
             <article
               className="c-content__project__Right"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-project__img">
                 <img className="c-project__img--ml6" src="/assets/images/Krypto.png" alt="" />
@@ -377,11 +330,6 @@ export default function HomePage() {
           <section className="c-content__other">
             <div
               className="c-content__left"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-content__title">
                 <h2 className="c-content__name" id="About">
@@ -394,11 +342,6 @@ export default function HomePage() {
             <div className="c-content__grid">
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -438,11 +381,6 @@ export default function HomePage() {
               </article>
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -485,11 +423,6 @@ export default function HomePage() {
 
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -530,11 +463,6 @@ export default function HomePage() {
 
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -575,11 +503,6 @@ export default function HomePage() {
 
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -620,11 +543,6 @@ export default function HomePage() {
 
               <article
                 className="c-content__cube u-x-span-1-bp3"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-sine"
-                data-aos-once="true"
-                data-aos-delay="0"
               >
                 <div className="c-cube__icons">
                   <div className="c-cube__folder">
@@ -667,11 +585,6 @@ export default function HomePage() {
 
           <div
             className="c-content__button"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine"
-            data-aos-once="true"
-            data-aos-delay="0"
           >
             <a className="c-content__timeline" href="#">
               Timeline
@@ -682,11 +595,6 @@ export default function HomePage() {
             <div
               className="c-contact__title"
               id="Contact"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <div className="c-content__line c-title__left"></div>
               <div className="c-title__text">Satisfied?</div>
@@ -695,22 +603,12 @@ export default function HomePage() {
 
             <h2
               className="c-content__head"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               Get In Touch.
             </h2>
 
             <p
               className="c-content__text"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               I'm always open to connecting about data science, Generative AI, and consulting opportunities. If you have
               a project or collaboration in mind, feel free to mail me and I will get back as soon as possible!
@@ -718,11 +616,6 @@ export default function HomePage() {
 
             <div
               className="c-content__button"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-delay="0"
             >
               <a className="c-content__contact" href="mailto:arora.aniket@hotmail.com">
                 Contact
