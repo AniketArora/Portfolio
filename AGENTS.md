@@ -1,23 +1,26 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `index.html` is the single-page entry point and contains SEO/meta tags, external CDN links, and the main markup.
-- `css/` holds styles: `normalize.css` (vendor reset) and `screen.css` (site styles and variables).
-- `js/index.js` contains all client-side behavior (navbar scroll hide/show and cookie banner).
-- `assets/images/` stores site imagery used in the portfolio cards and social previews.
-- Root static assets include favicons, `site.webmanifest`, `sitemap.xml`, `robots.txt`, and `Resume.pdf`.
+- `app/` contains the Next.js App Router entry points: `layout.tsx` (metadata and global styles) and `page.tsx` (main markup).
+- `app/components/` holds client-only behavior (navbar scroll hide/show, cookie banner).
+- `app/robots.ts` and `app/sitemap.ts` generate SEO metadata routes.
+- `css/` holds styles: `normalize.css` (vendor reset) and `screen.css` (site styles and variables) imported in `app/layout.tsx`.
+- `public/assets/images/` stores site imagery used in the portfolio cards and social previews.
+- `public/` contains static assets like favicons, `site.webmanifest`, and `Resume.pdf`.
 
 ## Build, Test, and Development Commands
-This repo is a static site with no build step or package manager.
-- Local preview (simple static server): `python -m http.server 8000`
-  - Open `http://localhost:8000` in your browser.
-- Quick check: open `index.html` directly in a browser (best for quick content edits).
+This repo is a Next.js app.
+- Install dependencies: `bun install`
+- Local dev server: `bun run dev`
+  - Open `http://localhost:3000` in your browser.
+- Production build: `bun run build`
+- Serve production build: `bun run start`
 
 ## Coding Style & Naming Conventions
-- Indentation: HTML/JS use 4 spaces; CSS uses 2 spaces (match existing files).
+- Indentation: TS/TSX/JS use 2 spaces; CSS uses 2 spaces (match existing files).
 - Class naming follows a BEM-like pattern with a `c-` prefix (e.g., `c-header__nav`, `c-nav__item--button`).
 - Keep CSS variables centralized in `:root` in `css/screen.css`.
-- Use double quotes in HTML/JS and keep semicolons in JS, matching `js/index.js`.
+- Use double quotes in TS/TSX/JS and keep semicolons in JS/TS.
 
 ## Testing Guidelines
 No automated tests are present. Manually verify:
@@ -29,7 +32,7 @@ No automated tests are present. Manually verify:
 ## Commit & Pull Request Guidelines
 - Commit messages in history are short, sentence-case, and verb-led (e.g., “Update portfolio content and layout”).
 - For PRs, include a concise summary, note manual testing performed, and attach screenshots/GIFs for UI changes.
-- If you change URLs, social images, or metadata, update `sitemap.xml` and the Open Graph/Twitter tags in `index.html`.
+- If you change URLs, social images, or metadata, update `app/sitemap.ts` and the Open Graph/Twitter tags in `app/layout.tsx`.
 
 ## Security & Configuration Notes
-- External dependencies are loaded via CDN (Google Fonts, AOS, Google Analytics). If you replace them, update the `<head>` links and verify CSP or privacy requirements as needed.
+- Google Analytics is loaded via CDN. If you replace it, update the `<head>` links and verify CSP or privacy requirements as needed.
