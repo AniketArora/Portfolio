@@ -49,7 +49,6 @@ export const metadata: Metadata = {
   title: "Aniket Arora",
   description:
     "Portfolio of Aniket Arora, Senior Data Scientist at IBM Consulting.",
-  themeColor: "#1d3f4e",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -111,7 +110,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 1
+  initialScale: 1,
+  themeColor: "#1d3f4e"
 };
 
 export default function RootLayout({
