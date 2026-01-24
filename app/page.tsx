@@ -2,7 +2,146 @@ import Image from "next/image";
 import CookieBanner from "./components/CookieBanner";
 import ScrollNavbar from "./components/ScrollNavbar";
 
+const GithubIcon = ({ size }: { size: number }) => (
+  <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24">
+    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+  </svg>
+);
+
+const FolderIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+  >
+    <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(-448 -3528)" clipPath="url(#clip-path)">
+      <path
+        id="folder"
+        d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
+        transform="translate(448 3528)"
+        fill="#1d3f4e"
+      />
+    </g>
+  </svg>
+);
+
 export default function HomePage() {
+  const aboutHighlights = [
+    "Consulting",
+    "Generative AI",
+    "Large Language Models (LLM)",
+    "Machine Learning & Deep Learning"
+  ];
+  const experienceItems = [
+    {
+      company: "IBM Consulting",
+      roles: [
+        "Senior Data Scientist - Jan 2025 - Present · Brussels, Belgium",
+        "Data Scientist - Apr 2022 - Present · Brussels, Belgium",
+        "Junior DevOps Engineer - Sep 2021 - Apr 2022 · Brussels, Belgium",
+        "Automation Intern - Feb 2021 - Sep 2021 · Brussels, Belgium"
+      ]
+    },
+    {
+      company: "JD Systems BVBA",
+      roles: ["Intern - Mar 2018 · Menen, Belgium"]
+    }
+  ];
+  const educationItems = [
+    "Howest - Bachelor's degree, New Media & Communication Technology (NMCT) · 2018 - 2021",
+    "Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018",
+    "Spes Nostra Heule - Handel · 2012 - 2016"
+  ];
+  const projectImageProps = {
+    width: 1284,
+    height: 738,
+    sizes: "(min-width: 992px) 50vw, 100vw"
+  };
+  const featuredProjects = [
+    {
+      title: "Office Of The Future - ML6",
+      description:
+        "This project was made with the company ML6. My team and I had to look at how we could make their office 'Future Proof'.",
+      labels: "Chart.js - Google Cloud - OpenCV - Flask",
+      imageSrc: "/assets/images/Office_Of_The_Future.png",
+      imageAlt: "Office of the Future project interface preview",
+      imageClass: "c-project__img--ml6",
+      githubUrl: "https://github.com/StijnVandendriessche1/MCT-S4-Project-III",
+      githubLabel: "View Office Of The Future project on GitHub",
+      layout: "Right"
+    },
+    {
+      title: "Snek - Exergame",
+      description:
+        "The classic snake game made as an exergame. Children between 6 to 12 years need to move the snake around by pushing buttons placed on the ground.",
+      labels: "Flask - SocketIO - Python",
+      imageSrc: "/assets/images/Snek.png",
+      imageAlt: "Snek exergame interface preview",
+      imageClass: "c-project__img--Snek",
+      githubUrl: "https://github.com/AniketArora/Project-II",
+      githubLabel: "View Snek Exergame on GitHub",
+      layout: "Left"
+    },
+    {
+      title: "Krypto - Cryptocurrency charts",
+      description:
+        "A Webapp & App that visualizes the most popular cryptocurrencies at the moment. The goal was to make both projects look similar.",
+      labels: "Xamarin - Chart.js - Coinbase Api - Micro Interactions",
+      imageSrc: "/assets/images/Krypto.png",
+      imageAlt: "Krypto cryptocurrency charting interface preview",
+      imageClass: "c-project__img--ml6",
+      githubUrl: "https://github.com/AniketArora/Krypto-CreateIII",
+      githubLabel: "View Krypto project on GitHub",
+      layout: "Right"
+    }
+  ];
+  const otherProjects = [
+    {
+      title: "Point",
+      description: "A POS system where you can manage stock, make payments, and order.",
+      labels: "Flutter - Work In Progress",
+      githubUrl: "https://github.com/AniketArora/Point",
+      githubLabel: "View Point project on GitHub"
+    },
+    {
+      title: "Quiz",
+      description: "A .NET site where you can play a quiz with friends. Includes a full auto-generated controller & repo.",
+      labels: "C# - .Net Core - Work In Progress",
+      githubUrl: "https://github.com/AniketArora/Project-Quiz-Backend",
+      githubLabel: "View Quiz project on GitHub"
+    },
+    {
+      title: "Fake news Database",
+      description: "A python server where you can connect clients to and see data.",
+      labels: "Python - Threading - Numpy",
+      githubUrl: "https://github.com/StijnVandendriessche1/project-2020-Aniket_Arora-Stijn_Vandendriessche",
+      githubLabel: "View Fake news database project on GitHub"
+    },
+    {
+      title: "Stadsbouwers",
+      description: "A website that I designed for a local builder.",
+      labels: "Adobe XD",
+      githubUrl: "https://github.com/Jonas-D-M/Stadsbouwers",
+      githubLabel: "View Stadsbouwers project on GitHub"
+    },
+    {
+      title: "Portfolio",
+      description: "My portfolio website that you are currently on.",
+      labels: "Adobe XD - Web - Work In Progress",
+      githubUrl: "https://github.com/AniketArora/Portfolio",
+      githubLabel: "View Portfolio project on GitHub"
+    },
+    {
+      title: "Daylight app",
+      description: "An assignment that I got for my course on User Interaction.",
+      labels: "Web - Micro Interactions",
+      githubUrl: "https://github.com/nmct-create3/daylight-app-AniketArora",
+      githubLabel: "View Daylight app project on GitHub"
+    }
+  ];
+
   return (
     <>
       <ScrollNavbar />
@@ -130,18 +269,11 @@ export default function HomePage() {
               </p>
               <article className="c-about__list">
                 <ul className="c-list c-list--grid">
-                  <li>
-                    <h4>Consulting</h4>
-                  </li>
-                  <li>
-                    <h4>Generative AI</h4>
-                  </li>
-                  <li>
-                    <h4>Large Language Models (LLM)</h4>
-                  </li>
-                  <li>
-                    <h4>Machine Learning &amp; Deep Learning</h4>
-                  </li>
+                  {aboutHighlights.map((item) => (
+                    <li key={item}>
+                      <h4>{item}</h4>
+                    </li>
+                  ))}
                 </ul>
               </article>
             </div>
@@ -176,27 +308,18 @@ export default function HomePage() {
             </div>
             <div className="c-experience__layout">
               <div className="c-experience__text">
-                <h3>IBM Consulting</h3>
-                <ul className="c-list">
-                  <li>
-                    <h4>Senior Data Scientist - Jan 2025 - Present · Brussels, Belgium</h4>
-                  </li>
-                  <li>
-                    <h4>Data Scientist - Apr 2022 - Present · Brussels, Belgium</h4>
-                  </li>
-                  <li>
-                    <h4>Junior DevOps Engineer - Sep 2021 - Apr 2022 · Brussels, Belgium</h4>
-                  </li>
-                  <li>
-                    <h4>Automation Intern - Feb 2021 - Sep 2021 · Brussels, Belgium</h4>
-                  </li>
-                </ul>
-                <h3>JD Systems BVBA</h3>
-                <ul className="c-list">
-                  <li>
-                    <h4>Intern - Mar 2018 · Menen, Belgium</h4>
-                  </li>
-                </ul>
+                {experienceItems.map((experience) => (
+                  <div key={experience.company}>
+                    <h3>{experience.company}</h3>
+                    <ul className="c-list">
+                      {experience.roles.map((role) => (
+                        <li key={role}>
+                          <h4>{role}</h4>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
               <div className="c-experience__art">
                 <img
@@ -222,17 +345,11 @@ export default function HomePage() {
                   <div className="c-content__line"></div>
                 </div>
                 <ul className="c-list">
-                  <li>
-                    <h4>
-                      Howest - Bachelor's degree, New Media &amp; Communication Technology (NMCT) · 2018 - 2021
-                    </h4>
-                  </li>
-                  <li>
-                    <h4>Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018</h4>
-                  </li>
-                  <li>
-                    <h4>Spes Nostra Heule - Handel · 2012 - 2016</h4>
-                  </li>
+                  {educationItems.map((item) => (
+                    <li key={item}>
+                      <h4>{item}</h4>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="c-education__art">
@@ -263,102 +380,46 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-              <article
-                className="c-content__project__Right"
-            >
-              <div className="c-project__img">
-                <Image
-                  className="c-project__img--ml6"
-                  src="/assets/images/Office_Of_The_Future.png"
-                  alt="Office of the Future project interface preview"
-                  width={1284}
-                  height={738}
-                  sizes="(min-width: 992px) 50vw, 100vw"
-                />
-              </div>
-              <div className="c-project__content">
-                <div className="c-project__label">Featured</div>
-                <h3 className="c-project__name">Office Of The Future - ML6</h3>
-                <p className="c-project__details">
-                  This project was made with the company ML6. My team and I had to look at how we could make their
-                  office 'Future Proof'.
-                </p>
-                <p className="c-project__labels">Chart.js - Google Cloud - OpenCV - Flask</p>
-                <div className="c-project__links">
-                  <a
-                    href="https://github.com/StijnVandendriessche1/MCT-S4-Project-III"
-                    aria-label="View Office Of The Future project on GitHub"
-                  >
-                    <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </a>
+            {featuredProjects.map((project) => {
+              const projectImage = (
+                <div className="c-project__img">
+                  <Image
+                    className={project.imageClass}
+                    src={project.imageSrc}
+                    alt={project.imageAlt}
+                    {...projectImageProps}
+                  />
                 </div>
-              </div>
-            </article>
-
-            <article
-              className="c-content__project__Left"
-            >
-              <div className="c-project__content">
-                <div className="c-project__label">Featured</div>
-                <h3 className="c-project__name">Snek - Exergame</h3>
-                <p className="c-project__details">
-                  The classic snake game made as an exergame. Children between 6 to 12 years need to move the snake
-                  around by pushing buttons placed on the ground.
-                </p>
-                <p className="c-project__labels">Flask - SocketIO - Python</p>
-                <div className="c-project__links">
-                  <a href="https://github.com/AniketArora/Project-II" aria-label="View Snek Exergame on GitHub">
-                    <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </a>
+              );
+              const projectContent = (
+                <div className="c-project__content">
+                  <div className="c-project__label">Featured</div>
+                  <h3 className="c-project__name">{project.title}</h3>
+                  <p className="c-project__details">{project.description}</p>
+                  <p className="c-project__labels">{project.labels}</p>
+                  <div className="c-project__links">
+                    <a href={project.githubUrl} aria-label={project.githubLabel}>
+                      <GithubIcon size={40} />
+                    </a>
+                  </div>
                 </div>
-              </div>
-
-              <div className="c-project__img">
-                <Image
-                  className="c-project__img--Snek"
-                  src="/assets/images/Snek.png"
-                  alt="Snek exergame interface preview"
-                  width={1284}
-                  height={738}
-                  sizes="(min-width: 992px) 50vw, 100vw"
-                />
-              </div>
-            </article>
-
-            <article
-              className="c-content__project__Right"
-            >
-              <div className="c-project__img">
-                <Image
-                  className="c-project__img--ml6"
-                  src="/assets/images/Krypto.png"
-                  alt="Krypto cryptocurrency charting interface preview"
-                  width={1284}
-                  height={738}
-                  sizes="(min-width: 992px) 50vw, 100vw"
-                />
-              </div>
-              <div className="c-project__content">
-                <div className="c-project__label">Featured</div>
-                <h3 className="c-project__name">Krypto - Cryptocurrency charts</h3>
-                <p className="c-project__details">
-                  A Webapp &amp; App that visualizes the most popular cryptocurrencies at the moment. The goal was to make
-                  both projects look similar.
-                </p>
-                <p className="c-project__labels">Xamarin - Chart.js - Coinbase Api - Micro Interactions</p>
-                <div className="c-project__links">
-                  <a href="https://github.com/AniketArora/Krypto-CreateIII" aria-label="View Krypto project on GitHub">
-                    <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </article>
+              );
+              return (
+                <article key={project.title} className={`c-content__project__${project.layout}`}>
+                  {project.layout === "Right" ? (
+                    <>
+                      {projectImage}
+                      {projectContent}
+                    </>
+                  ) : (
+                    <>
+                      {projectContent}
+                      {projectImage}
+                    </>
+                  )}
+                </article>
+              );
+            })}
           </section>
           <section className="c-content__other">
             <div
@@ -373,255 +434,25 @@ export default function HomePage() {
             </div>
 
             <div className="c-content__grid">
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
+              {otherProjects.map((project) => (
+                <article key={project.title} className="c-content__cube u-x-span-1-bp3">
+                  <div className="c-cube__icons">
+                    <div className="c-cube__folder">
+                      <FolderIcon />
+                    </div>
+                    {project.githubUrl ? (
+                      <div className="c-cube__github">
+                        <a href={project.githubUrl} aria-label={project.githubLabel}>
+                          <GithubIcon size={32} />
+                        </a>
+                      </div>
+                    ) : null}
                   </div>
-                  <div className="c-cube__github">
-                    <a href="https://github.com/AniketArora/Point" aria-label="View Point project on GitHub">
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Point</h3>
-                <p className="c-cube__text">A POS system where you can manage stock, make payments, and order.</p>
-                <p className="c-cube__labels">Flutter - Work In Progress</p>
-              </article>
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="c-cube__github">
-                    <a
-                      href="https://github.com/AniketArora/Project-Quiz-Backend"
-                      aria-label="View Quiz project on GitHub"
-                    >
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Quiz</h3>
-                <p className="c-cube__text">
-                  A .NET site where you can play a quiz with friends. Includes a full auto-generated controller &amp; repo.
-                </p>
-                <p className="c-cube__labels">C# - .Net Core - Work In Progress</p>
-              </article>
-
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="c-cube__github">
-                    <a
-                      href="https://github.com/StijnVandendriessche1/project-2020-Aniket_Arora-Stijn_Vandendriessche"
-                      aria-label="View Fake news database project on GitHub"
-                    >
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Fake news Database</h3>
-                <p className="c-cube__text">A python server where you can connect clients to and see data.</p>
-                <p className="c-cube__labels">Python - Threading - Numpy</p>
-              </article>
-
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="c-cube__github">
-                    <a href="https://github.com/Jonas-D-M/Stadsbouwers" aria-label="View Stadsbouwers project on GitHub">
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Stadsbouwers</h3>
-                <p className="c-cube__text">A website that I designed for a local builder.</p>
-                <p className="c-cube__labels">Adobe XD</p>
-              </article>
-
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="c-cube__github">
-                    <a href="https://github.com/AniketArora/Portfolio" aria-label="View Portfolio project on GitHub">
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Portfolio</h3>
-                <p className="c-cube__text">My portfolio website that you are currently on.</p>
-                <p className="c-cube__labels">Adobe XD - Web - Work In Progress</p>
-              </article>
-
-              <article
-                className="c-content__cube u-x-span-1-bp3"
-              >
-                <div className="c-cube__icons">
-                  <div className="c-cube__folder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        id="Mask_Group_2"
-                        data-name="Mask Group 2"
-                        transform="translate(-448 -3528)"
-                        clipPath="url(#clip-path)"
-                      >
-                        <path
-                          id="folder"
-                          d="M36.667,6.667H19.517l-3.1-3.083a.833.833,0,0,0-.583-.25H3.333A3.333,3.333,0,0,0,0,6.667V33.333a3.333,3.333,0,0,0,3.333,3.333H36.667A3.333,3.333,0,0,0,40,33.333V10A3.333,3.333,0,0,0,36.667,6.667Z"
-                          transform="translate(448 3528)"
-                          fill="#1d3f4e"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="c-cube__github">
-                    <a
-                      href="https://github.com/nmct-create3/daylight-app-AniketArora"
-                      aria-label="View Daylight app project on GitHub"
-                    >
-                      <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h3 className="c-cube__title">Daylight app</h3>
-                <p className="c-cube__text">An assignment that I got for my course on User Interaction.</p>
-                <p className="c-cube__labels">Web - Micro Interactions</p>
-              </article>
+                  <h3 className="c-cube__title">{project.title}</h3>
+                  <p className="c-cube__text">{project.description}</p>
+                  <p className="c-cube__labels">{project.labels}</p>
+                </article>
+              ))}
             </div>
           </section>
 
