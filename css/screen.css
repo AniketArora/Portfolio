@@ -13,6 +13,7 @@
   --global-white: #ffffff;
   --global-beta: #23bbff;
   --global-black: #000000;
+  --global-accent: var(--global-beta);
   --global-selection: var(--global-alpha);
   --global-selection-background: var(--global-beta);
   --global-color-alpha-transparent: #1d3f4ebf;
@@ -31,6 +32,11 @@
   --global-color-error: #ff3333;
   --global-color-error-transparent: #ff3333bf;
   --global-color-error-x-transparent: #ff33334d;
+  /* legacy color tokens */
+  --color-input-alpha: var(--global-white);
+  --color-input-alpha-x-light: var(--global-beta);
+  --color-alpha: var(--global-beta);
+  --color-neutral-light: var(--global-color-neutral-light);
   /* Font weights */
   --global-default-weight: 500;
   /* Shadows */
