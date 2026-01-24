@@ -153,6 +153,8 @@ export default function HomePage() {
                 alt="Programming illustration"
                 width="544"
                 height="289.503"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </section>
@@ -201,6 +203,8 @@ export default function HomePage() {
                   className="c-experience__svg"
                   src="/assets/images/undraw_my-resume_etai.svg"
                   alt="Resume illustration"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -236,6 +240,8 @@ export default function HomePage() {
                   className="c-education__svg"
                   src="/assets/images/undraw_education_3vwh.svg"
                   alt="Education illustration"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
