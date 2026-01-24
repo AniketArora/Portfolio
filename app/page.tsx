@@ -54,10 +54,9 @@ export default function HomePage() {
     "Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018",
     "Spes Nostra Heule - Handel · 2012 - 2016"
   ];
-  const projectImageProps = {
+  const projectImageDimensions = {
     width: 1284,
-    height: 738,
-    sizes: "(min-width: 992px) 50vw, 100vw"
+    height: 738
   };
   const featuredProjects = [
     {
@@ -383,11 +382,14 @@ export default function HomePage() {
             {featuredProjects.map((project) => {
               const projectImage = (
                 <div className="c-project__img">
-                  <Image
+                  <img
                     className={project.imageClass}
                     src={project.imageSrc}
                     alt={project.imageAlt}
-                    {...projectImageProps}
+                    width={projectImageDimensions.width}
+                    height={projectImageDimensions.height}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               );
