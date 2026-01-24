@@ -6,14 +6,22 @@ export default function CookieBanner() {
   const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
-    const storage = window.localStorage;
-    if (storage.getItem("cookies") == null) {
+    try {
+      const storage = window.localStorage;
+      if (storage.getItem("cookies") == null) {
+        setIsHidden(false);
+      }
+    } catch (error) {
       setIsHidden(false);
     }
   }, []);
 
   const handleConfirm = () => {
-    window.localStorage.setItem("cookies", "true");
+    try {
+      window.localStorage.setItem("cookies", "true");
+    } catch (error) {
+      // Ignore storage errors; the banner still dismisses for this session.
+    }
     setIsHidden(true);
   };
 
