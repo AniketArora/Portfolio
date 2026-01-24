@@ -892,8 +892,9 @@ li {
   margin-top: 32px;
 }
 
-.c-project_img {
-  box-shadow: var(--shadow-box);
+.c-project__img img {
+  display: block;
+  filter: drop-shadow(var(--shadow-box));
 }
 
 .c-content__project__Right .c-project__content {
@@ -1168,7 +1169,7 @@ li {
   margin-bottom: 48px;
 }
 
-.c-content__contact {
+a.c-content__contact {
   text-decoration: none;
   font-size: 24px;
   border: 2px solid white;
@@ -1176,8 +1177,8 @@ li {
   padding: 8px 32px;
 }
 
-.c-content__contact:hover,
-.c-content__contact:active {
+a.c-content__contact:hover,
+a.c-content__contact:active {
   border-color: var(--global-black);
   color: var(--global-black);
 }

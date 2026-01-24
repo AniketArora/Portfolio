@@ -5,9 +5,9 @@ export default function HomePage() {
   return (
     <>
       <ScrollNavbar />
-      <nav className="c-header">
+      <nav className="c-header" id="top">
         <div className="c-header__logo">
-          <a href="#">
+          <a href="#top">
             <svg
               className="c-logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -614,12 +614,12 @@ export default function HomePage() {
           <div
             className="c-content__button"
           >
-            <a className="c-content__timeline" href="#">
+            <a className="c-content__timeline" href="#Experience">
               Timeline
             </a>
           </div>
 
-          <footer className="c_content__contact">
+          <footer className="c-content__contact">
             <div
               className="c-contact__title"
               id="Contact"
