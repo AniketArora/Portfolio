@@ -33,6 +33,7 @@ No automated tests are present. Manually verify:
 - Commit messages in history are short, sentence-case, and verb-led (e.g., “Update portfolio content and layout”).
 - For PRs, include a concise summary, note manual testing performed, and attach screenshots/GIFs for UI changes.
 - If you change URLs, social images, or metadata, update `app/sitemap.ts` and the Open Graph/Twitter tags in `app/layout.tsx`.
+- Use git flow for feature branches (e.g., `git flow feature start <name>`).
 
 ## Security & Configuration Notes
 - Google Analytics is loaded via CDN. If you replace it, update the `<head>` links and verify CSP or privacy requirements as needed.
