@@ -3,5 +3,44 @@
   "bunVersion": "1.3.5",
   "installCommand": "bun install",
   "buildCommand": "bun run build",
-  "devCommand": "bun run dev"
+  "devCommand": "bun run dev",
+  "headers": [
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(favicon\\.ico|favicon-16x16\\.png|favicon-32x32\\.png|apple-touch-icon\\.png|android-chrome-192x192\\.png|android-chrome-512x512\\.png|mstile-70x70\\.png|mstile-150x150\\.png|mstile-144x144\\.png|mstile-310x150\\.png|mstile-310x310\\.png|safari-pinned-tab\\.svg|site\\.webmanifest|browserconfig\\.xml)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/Resume.pdf",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.aniketarora.be" }],
+      "destination": "https://aniketarora.be/$1",
+      "permanent": true
+    }
+  ],
+  "regions": ["bru1"]
 }

@@ -1,5 +1,6 @@
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  poweredByHeader: false
 };
 
 module.exports = nextConfig;
