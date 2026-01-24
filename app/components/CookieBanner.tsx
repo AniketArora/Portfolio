@@ -20,7 +20,7 @@ export default function CookieBanner() {
   return (
     <div className={`c-cookies ${isHidden ? "c-cookies__hidden" : ""}`}>
       <div className="c-cookies__content">
-        <h1 className="c-cookies__title">This site uses cookies</h1>
+        <h2 className="c-cookies__title">This site uses cookies</h2>
         <p>
           By using my site, you agree to my use of cookies to deliver a better
           site experience.

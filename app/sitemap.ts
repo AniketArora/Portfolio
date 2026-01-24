@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://aniketarora.be";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = new Date("2026-01-24");
 
   return [
     {

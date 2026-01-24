@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CookieBanner from "./components/CookieBanner";
 import ScrollNavbar from "./components/ScrollNavbar";
 
@@ -88,16 +89,14 @@ export default function HomePage() {
             className="c-top__content"
           >
             <div className="c-top__left">
-              <picture>
-                <source type="image/webp" srcSet="/assets/images/Face_Blob_50.webp" />
-                <img
-                  className="c-top__face"
-                  src="/assets/images/Face_Blob_50.png"
-                  alt="My face"
-                  width="1179"
-                  height="1378"
-                />
-              </picture>
+              <Image
+                className="c-top__face"
+                src="/assets/images/Face_Blob_50.png"
+                alt="My face"
+                width={1179}
+                height={1378}
+                priority
+              />
             </div>
             <div className="c-top__right">
               <div className="c-top__text">Hi, my name is.</div>
@@ -262,10 +261,13 @@ export default function HomePage() {
                 className="c-content__project__Right"
             >
               <div className="c-project__img">
-                <img
+                <Image
                   className="c-project__img--ml6"
                   src="/assets/images/Office_Of_The_Future.png"
                   alt="Office of the Future project interface preview"
+                  width={1284}
+                  height={738}
+                  sizes="(min-width: 992px) 50vw, 100vw"
                 />
               </div>
               <div className="c-project__content">
@@ -310,10 +312,13 @@ export default function HomePage() {
               </div>
 
               <div className="c-project__img">
-                <img
+                <Image
                   className="c-project__img--Snek"
                   src="/assets/images/Snek.png"
                   alt="Snek exergame interface preview"
+                  width={1284}
+                  height={738}
+                  sizes="(min-width: 992px) 50vw, 100vw"
                 />
               </div>
             </article>
@@ -322,10 +327,13 @@ export default function HomePage() {
               className="c-content__project__Right"
             >
               <div className="c-project__img">
-                <img
+                <Image
                   className="c-project__img--ml6"
                   src="/assets/images/Krypto.png"
                   alt="Krypto cryptocurrency charting interface preview"
+                  width={1284}
+                  height={738}
+                  sizes="(min-width: 992px) 50vw, 100vw"
                 />
               </div>
               <div className="c-project__content">
