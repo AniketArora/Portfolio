@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CookieBanner from "./components/CookieBanner";
 import ScrollNavbar from "./components/ScrollNavbar";
+import { cvData } from "./data/cv";
 
 const GithubIcon = ({ size }: { size: number }) => (
   <svg className="c-project__link" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24">
@@ -28,118 +29,89 @@ const FolderIcon = () => (
 );
 
 export default function HomePage() {
-  const aboutHighlights = [
-    "Consulting",
-    "Generative AI",
-    "Large Language Models (LLM)",
-    "Machine Learning & Deep Learning"
+  const aboutHighlights = cvData.highlights;
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
   ];
-  const experienceItems = [
-    {
-      company: "IBM Consulting",
-      roles: [
-        "Senior Data Scientist - Jan 2025 - Present · Brussels, Belgium",
-        "Data Scientist - Apr 2022 - Present · Brussels, Belgium",
-        "Junior DevOps Engineer - Sep 2021 - Apr 2022 · Brussels, Belgium",
-        "Automation Intern - Feb 2021 - Sep 2021 · Brussels, Belgium"
-      ]
-    },
-    {
-      company: "JD Systems BVBA",
-      roles: ["Intern - Mar 2018 · Menen, Belgium"]
+  const formatDate = (value?: string) => {
+    if (!value) {
+      return "";
     }
-  ];
-  const educationItems = [
-    "Howest - Bachelor's degree, New Media & Communication Technology (NMCT) · 2018 - 2021",
-    "Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018",
-    "Spes Nostra Heule - Handel · 2012 - 2016"
-  ];
+    if (value === "Present") {
+      return value;
+    }
+    if (/^\d{4}-\d{2}$/.test(value)) {
+      const [year, month] = value.split("-");
+      const monthIndex = Number(month) - 1;
+      return `${monthNames[monthIndex]} ${year}`;
+    }
+    return value;
+  };
+  const formatRange = (start?: string, end?: string) => {
+    const startLabel = formatDate(start);
+    const endLabel = end ? formatDate(end) : "Present";
+    if (!startLabel && !endLabel) {
+      return "";
+    }
+    if (startLabel && endLabel && startLabel === endLabel) {
+      return startLabel;
+    }
+    if (startLabel && endLabel) {
+      return `${startLabel} - ${endLabel}`;
+    }
+    return startLabel || endLabel;
+  };
+  const experienceItems = cvData.experience.map((experience) => ({
+    company: experience.company,
+    roles: experience.roles.map((role) => {
+      const range = formatRange(role.start, role.end);
+      const location = role.location ? ` · ${role.location}` : "";
+      return `${role.title}${range ? ` - ${range}` : ""}${location}`;
+    })
+  }));
+  const educationItems = cvData.education.map((education) => {
+    const degreeLabel = education.focus ? `${education.degree}, ${education.focus}` : education.degree;
+    const range = formatRange(education.start, education.end);
+    const rangeLabel = range ? ` · ${range}` : "";
+    return `${education.institution} - ${degreeLabel}${rangeLabel}`;
+  });
   const projectImageDimensions = {
     width: 1284,
     height: 738
   };
-  const featuredProjects = [
-    {
-      title: "Office Of The Future - ML6",
-      description:
-        "This project was made with the company ML6. My team and I had to look at how we could make their office 'Future Proof'.",
-      labels: "Chart.js - Google Cloud - OpenCV - Flask",
-      imageSrc: "/assets/images/Office_Of_The_Future.png",
-      imageAlt: "Office of the Future project interface preview",
-      imageClass: "c-project__img--ml6",
-      githubUrl: "https://github.com/StijnVandendriessche1/MCT-S4-Project-III",
-      githubLabel: "View Office Of The Future project on GitHub",
-      layout: "Right"
-    },
-    {
-      title: "Snek - Exergame",
-      description:
-        "The classic snake game made as an exergame. Children between 6 to 12 years need to move the snake around by pushing buttons placed on the ground.",
-      labels: "Flask - SocketIO - Python",
-      imageSrc: "/assets/images/Snek.png",
-      imageAlt: "Snek exergame interface preview",
-      imageClass: "c-project__img--Snek",
-      githubUrl: "https://github.com/AniketArora/Project-II",
-      githubLabel: "View Snek Exergame on GitHub",
-      layout: "Left"
-    },
-    {
-      title: "Krypto - Cryptocurrency charts",
-      description:
-        "A Webapp & App that visualizes the most popular cryptocurrencies at the moment. The goal was to make both projects look similar.",
-      labels: "Xamarin - Chart.js - Coinbase Api - Micro Interactions",
-      imageSrc: "/assets/images/Krypto.png",
-      imageAlt: "Krypto cryptocurrency charting interface preview",
-      imageClass: "c-project__img--ml6",
-      githubUrl: "https://github.com/AniketArora/Krypto-CreateIII",
-      githubLabel: "View Krypto project on GitHub",
-      layout: "Right"
-    }
-  ];
-  const otherProjects = [
-    {
-      title: "Point",
-      description: "A POS system where you can manage stock, make payments, and order.",
-      labels: "Flutter - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Point",
-      githubLabel: "View Point project on GitHub"
-    },
-    {
-      title: "Quiz",
-      description: "A .NET site where you can play a quiz with friends. Includes a full auto-generated controller & repo.",
-      labels: "C# - .Net Core - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Project-Quiz-Backend",
-      githubLabel: "View Quiz project on GitHub"
-    },
-    {
-      title: "Fake news Database",
-      description: "A python server where you can connect clients to and see data.",
-      labels: "Python - Threading - Numpy",
-      githubUrl: "https://github.com/StijnVandendriessche1/project-2020-Aniket_Arora-Stijn_Vandendriessche",
-      githubLabel: "View Fake news database project on GitHub"
-    },
-    {
-      title: "Stadsbouwers",
-      description: "A website that I designed for a local builder.",
-      labels: "Adobe XD",
-      githubUrl: "https://github.com/Jonas-D-M/Stadsbouwers",
-      githubLabel: "View Stadsbouwers project on GitHub"
-    },
-    {
-      title: "Portfolio",
-      description: "My portfolio website that you are currently on.",
-      labels: "Adobe XD - Web - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Portfolio",
-      githubLabel: "View Portfolio project on GitHub"
-    },
-    {
-      title: "Daylight app",
-      description: "An assignment that I got for my course on User Interaction.",
-      labels: "Web - Micro Interactions",
-      githubUrl: "https://github.com/nmct-create3/daylight-app-AniketArora",
-      githubLabel: "View Daylight app project on GitHub"
-    }
-  ];
+  const featuredProjects = cvData.projects
+    .filter((project) => project.portfolio?.kind === "featured")
+    .map((project) => ({
+      title: project.name,
+      description: project.description,
+      labels: project.tech?.join(" - ") ?? "",
+      imageSrc: project.portfolio?.imageSrc ?? "",
+      imageAlt: project.portfolio?.imageAlt ?? "",
+      imageClass: project.portfolio?.imageClass ?? "",
+      githubUrl: project.link ?? "",
+      githubLabel: project.linkLabel ?? `View ${project.name} project on GitHub`,
+      layout: project.portfolio?.layout ?? "Right"
+    }));
+  const otherProjects = cvData.projects
+    .filter((project) => project.portfolio?.kind === "other")
+    .map((project) => ({
+      title: project.name,
+      description: project.description,
+      labels: project.tech?.join(" - ") ?? "",
+      githubUrl: project.link ?? "",
+      githubLabel: project.linkLabel ?? `View ${project.name} project on GitHub`
+    }));
 
   return (
     <>
@@ -173,7 +145,7 @@ export default function HomePage() {
           <a className="c-nav__item" href="#Contact">
             Contact
           </a>
-          <a className="c-nav__item c-nav__item--button" href="/Resume.pdf">
+          <a className="c-nav__item c-nav__item--button" href="/resume">
             Resume
           </a>
           <div className="c-nav__line"></div>

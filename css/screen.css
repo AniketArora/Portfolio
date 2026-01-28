@@ -507,12 +507,18 @@ li {
   text-decoration: none;
   display: flex;
   margin: auto 20px;
+  color: var(--global-white);
+}
+
+.c-nav__item:visited {
+  color: var(--global-white);
 }
 
 .c-nav__item--button {
   border: 2px solid white;
   padding: 8px 24px;
   border-radius: 2px;
+  color: var(--global-white);
 }
 
 .c-nav__item--button:hover,
@@ -1165,6 +1171,11 @@ li {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+  color: var(--global-white);
+}
+
+.c-content__timeline:visited {
+  color: var(--global-white);
 }
 
 .c-content__timeline:hover,
@@ -1216,6 +1227,11 @@ a.c-content__contact {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+  color: var(--global-white);
+}
+
+a.c-content__contact:visited {
+  color: var(--global-white);
 }
 
 a.c-content__contact:hover,
@@ -1241,6 +1257,150 @@ a.c-content__contact:active {
 
 .c-hide-navbar a {
   cursor: default;
+}
+
+/*------------------------------------*\
+#Components - Resume
+\*------------------------------------*/
+
+.c-resume {
+  padding: 96px 24px 120px;
+  background: radial-gradient(circle at top right, rgba(35, 187, 255, 0.2), transparent 55%),
+    linear-gradient(135deg, #142e38 0%, #1d3f4e 55%, #0f2530 100%);
+}
+
+@media (min-width: 992px) {
+  .c-resume {
+    padding: 120px 24px 160px;
+  }
+}
+
+.c-resume__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  color: var(--global-white);
+}
+
+.c-resume__title {
+  max-width: 520px;
+}
+
+@media (min-width: 992px) {
+  .c-resume__toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.c-resume__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: var(--global-beta);
+  margin-bottom: 8px;
+}
+
+.c-resume__heading {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.c-resume__subtitle {
+  font-size: 14px;
+  color: var(--global-color-neutral-xx-light);
+  max-width: 420px;
+}
+
+.c-resume__actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.c-resume__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background-color: var(--global-white);
+  color: var(--global-alpha);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-neutral);
+}
+
+.c-resume__download:hover,
+.c-resume__download:active {
+  background-color: var(--global-beta);
+  color: var(--global-alpha);
+}
+
+.c-resume__viewer {
+  background-color: var(--global-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-box-dark);
+  overflow: hidden;
+}
+
+.c-resume__frame {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 540px;
+  border: 0;
+}
+
+@media (min-width: 1200px) {
+  .c-resume__frame {
+    height: 85vh;
+  }
+}
+
+.c-resume__fallback {
+  padding: 32px;
+  text-align: center;
+  color: var(--global-alpha);
+}
+
+.c-resume__fallback p {
+  margin-bottom: 16px;
+}
+
+.c-resume__fallback .c-resume__download {
+  background-color: var(--global-alpha);
+  color: var(--global-white);
+}
+
+.c-resume__fallback .c-resume__download:hover,
+.c-resume__fallback .c-resume__download:active {
+  background-color: var(--global-beta);
+  color: var(--global-alpha);
+}
+
+@media print {
+  .c-resume {
+    padding: 0;
+    background: none;
+  }
+
+  .c-resume__toolbar {
+    display: none;
+  }
+
+  .c-resume__viewer {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .c-resume__frame {
+    height: 100vh;
+  }
 }
 
 /*

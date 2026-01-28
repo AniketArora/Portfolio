@@ -22,9 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1
     },
     {
-      url: `${baseUrl}/Resume.pdf`,
+      url: `${baseUrl}/resume`,
       lastModified,
       priority: 0.8
+    },
+    {
+      url: `${baseUrl}/resume.pdf`,
+      lastModified,
+      priority: 0.7
     }
   ];
 }
