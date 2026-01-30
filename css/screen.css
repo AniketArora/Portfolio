@@ -1293,6 +1293,8 @@ a.c-content__contact:active {
   font-size: 24px;
   font-weight: 600;
   color: var(--global-alpha);
+  line-height: 32px;
+  margin: 0;
 }
 
 .c-cookies__hidden {

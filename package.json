@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "generate:resume": "bun ./scripts/generate-resume-pdf.ts",
+    "generate:resume": "bun ./scripts/compile-resume.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
