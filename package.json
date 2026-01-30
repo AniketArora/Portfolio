@@ -4,9 +4,9 @@
   "packageManager": "bun@1.3.5",
   "private": true,
   "scripts": {
-    "dev": "bun run generate:resume && next dev",
+    "dev": "next dev",
     "generate:resume": "bun ./scripts/generate-resume-pdf.ts",
-    "build": "bun run generate:resume && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
