@@ -97,6 +97,13 @@ const featuredProjects = [
 
 const otherProjects = [
   {
+    title: "Apollo Fitness",
+    description: "A personalized fitness assistant (WIP) using AI agents to suggest exercises and recipes based on user preferences.",
+    labels: "Python - LangChain - PyTorch - OpenAI API",
+    githubUrl: "https://github.com/AniketArora",
+    githubLabel: "View Fitness AI Agent project on GitHub"
+  },
+  {
     title: "Point",
     description: "A POS system where you can manage stock, make payments, and order.",
     labels: "Flutter - Work In Progress",
