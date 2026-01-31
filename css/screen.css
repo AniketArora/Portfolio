@@ -507,12 +507,18 @@ li {
   text-decoration: none;
   display: flex;
   margin: auto 20px;
+  color: var(--global-white);
+}
+
+.c-nav__item:visited {
+  color: var(--global-white);
 }
 
 .c-nav__item--button {
   border: 2px solid white;
   padding: 8px 24px;
   border-radius: 2px;
+  color: var(--global-white);
 }
 
 .c-nav__item--button:hover,
@@ -1165,6 +1171,11 @@ li {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+  color: var(--global-white);
+}
+
+.c-content__timeline:visited {
+  color: var(--global-white);
 }
 
 .c-content__timeline:hover,
@@ -1216,6 +1227,11 @@ a.c-content__contact {
   border: 2px solid white;
   border-radius: 2px;
   padding: 8px 32px;
+  color: var(--global-white);
+}
+
+a.c-content__contact:visited {
+  color: var(--global-white);
 }
 
 a.c-content__contact:hover,
@@ -1277,6 +1293,8 @@ a.c-content__contact:active {
   font-size: 24px;
   font-weight: 600;
   color: var(--global-alpha);
+  line-height: 32px;
+  margin: 0;
 }
 
 .c-cookies__hidden {

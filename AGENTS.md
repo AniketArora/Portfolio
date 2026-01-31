@@ -6,7 +6,7 @@
 - `app/robots.ts` and `app/sitemap.ts` generate SEO metadata routes.
 - `css/` holds styles: `normalize.css` (vendor reset) and `screen.css` (site styles and variables) imported in `app/layout.tsx`.
 - `public/assets/images/` stores site imagery used in the portfolio cards and social previews.
-- `public/` contains static assets like favicons, `site.webmanifest`, and `Resume.pdf`.
+- `public/` contains static assets like favicons, `site.webmanifest`, and `resume.pdf`.
 
 ## Build, Test, and Development Commands
 This repo is a Next.js app.

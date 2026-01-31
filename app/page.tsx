@@ -27,120 +27,132 @@ const FolderIcon = () => (
   </svg>
 );
 
-export default function HomePage() {
-  const aboutHighlights = [
-    "Consulting",
-    "Generative AI",
-    "Large Language Models (LLM)",
-    "Machine Learning & Deep Learning"
-  ];
-  const experienceItems = [
-    {
-      company: "IBM Consulting",
-      roles: [
-        "Senior Data Scientist - Jan 2025 - Present · Brussels, Belgium",
-        "Data Scientist - Apr 2022 - Present · Brussels, Belgium",
-        "Junior DevOps Engineer - Sep 2021 - Apr 2022 · Brussels, Belgium",
-        "Automation Intern - Feb 2021 - Sep 2021 · Brussels, Belgium"
-      ]
-    },
-    {
-      company: "JD Systems BVBA",
-      roles: ["Intern - Mar 2018 · Menen, Belgium"]
-    }
-  ];
-  const educationItems = [
-    "Howest - Bachelor's degree, New Media & Communication Technology (NMCT) · 2018 - 2021",
-    "Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018",
-    "Spes Nostra Heule - Handel · 2012 - 2016"
-  ];
-  const projectImageDimensions = {
-    width: 1284,
-    height: 738
-  };
-  const featuredProjects = [
-    {
-      title: "Office Of The Future - ML6",
-      description:
-        "This project was made with the company ML6. My team and I had to look at how we could make their office 'Future Proof'.",
-      labels: "Chart.js - Google Cloud - OpenCV - Flask",
-      imageSrc: "/assets/images/Office_Of_The_Future.png",
-      imageAlt: "Office of the Future project interface preview",
-      imageClass: "c-project__img--ml6",
-      githubUrl: "https://github.com/StijnVandendriessche1/MCT-S4-Project-III",
-      githubLabel: "View Office Of The Future project on GitHub",
-      layout: "Right"
-    },
-    {
-      title: "Snek - Exergame",
-      description:
-        "The classic snake game made as an exergame. Children between 6 to 12 years need to move the snake around by pushing buttons placed on the ground.",
-      labels: "Flask - SocketIO - Python",
-      imageSrc: "/assets/images/Snek.png",
-      imageAlt: "Snek exergame interface preview",
-      imageClass: "c-project__img--Snek",
-      githubUrl: "https://github.com/AniketArora/Project-II",
-      githubLabel: "View Snek Exergame on GitHub",
-      layout: "Left"
-    },
-    {
-      title: "Krypto - Cryptocurrency charts",
-      description:
-        "A Webapp & App that visualizes the most popular cryptocurrencies at the moment. The goal was to make both projects look similar.",
-      labels: "Xamarin - Chart.js - Coinbase Api - Micro Interactions",
-      imageSrc: "/assets/images/Krypto.png",
-      imageAlt: "Krypto cryptocurrency charting interface preview",
-      imageClass: "c-project__img--ml6",
-      githubUrl: "https://github.com/AniketArora/Krypto-CreateIII",
-      githubLabel: "View Krypto project on GitHub",
-      layout: "Right"
-    }
-  ];
-  const otherProjects = [
-    {
-      title: "Point",
-      description: "A POS system where you can manage stock, make payments, and order.",
-      labels: "Flutter - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Point",
-      githubLabel: "View Point project on GitHub"
-    },
-    {
-      title: "Quiz",
-      description: "A .NET site where you can play a quiz with friends. Includes a full auto-generated controller & repo.",
-      labels: "C# - .Net Core - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Project-Quiz-Backend",
-      githubLabel: "View Quiz project on GitHub"
-    },
-    {
-      title: "Fake news Database",
-      description: "A python server where you can connect clients to and see data.",
-      labels: "Python - Threading - Numpy",
-      githubUrl: "https://github.com/StijnVandendriessche1/project-2020-Aniket_Arora-Stijn_Vandendriessche",
-      githubLabel: "View Fake news database project on GitHub"
-    },
-    {
-      title: "Stadsbouwers",
-      description: "A website that I designed for a local builder.",
-      labels: "Adobe XD",
-      githubUrl: "https://github.com/Jonas-D-M/Stadsbouwers",
-      githubLabel: "View Stadsbouwers project on GitHub"
-    },
-    {
-      title: "Portfolio",
-      description: "My portfolio website that you are currently on.",
-      labels: "Adobe XD - Web - Work In Progress",
-      githubUrl: "https://github.com/AniketArora/Portfolio",
-      githubLabel: "View Portfolio project on GitHub"
-    },
-    {
-      title: "Daylight app",
-      description: "An assignment that I got for my course on User Interaction.",
-      labels: "Web - Micro Interactions",
-      githubUrl: "https://github.com/nmct-create3/daylight-app-AniketArora",
-      githubLabel: "View Daylight app project on GitHub"
-    }
-  ];
+const aboutHighlights = [
+  "Consulting",
+  "Generative AI",
+  "Large Language Models (LLMs)",
+  "Machine Learning & Deep Learning"
+];
 
+const experienceItems = [
+  {
+    company: "IBM Consulting",
+    roles: [
+      "Senior Data Scientist - Jan 2025 - Present · Brussels, Belgium",
+      "Data Scientist - Apr 2022 - Dec 2024 · Brussels, Belgium",
+      "Junior DevOps Engineer - Sep 2021 - Apr 2022 · Brussels, Belgium",
+      "Automation Intern - Feb 2021 - Sep 2021 · Brussels, Belgium"
+    ]
+  },
+  {
+    company: "JD Systems BVBA",
+    roles: ["Intern - Mar 2018 · Menen, Belgium"]
+  }
+];
+
+const educationItems = [
+  "Howest - Bachelor's degree, New Media & Communication Technology (NMCT) · 2018 - 2021",
+  "Guldensporencollege Kaai - Informaticabeheer · 2016 - 2018",
+  "Spes Nostra Heule - Handel · 2012 - 2016"
+];
+
+const featuredProjects = [
+  {
+    title: "Office Of The Future - ML6",
+    description:
+      "This project was made with the company ML6. My team and I had to look at how we could make their office 'Future Proof'.",
+    labels: "Chart.js - Google Cloud - OpenCV - Flask",
+    imageSrc: "/assets/images/Office_Of_The_Future.png",
+    imageAlt: "Office of the Future project interface preview",
+    imageClass: "c-project__img--ml6",
+    githubUrl: "https://github.com/StijnVandendriessche1/MCT-S4-Project-III",
+    githubLabel: "View Office Of The Future project on GitHub",
+    layout: "Right"
+  },
+  {
+    title: "Snek - Exergame",
+    description:
+      "The classic snake game made as an exergame. Children between 6 to 12 years need to move the snake around by pushing buttons placed on the ground.",
+    labels: "Flask - SocketIO - Python",
+    imageSrc: "/assets/images/Snek.png",
+    imageAlt: "Snek exergame interface preview",
+    imageClass: "c-project__img--Snek",
+    githubUrl: "https://github.com/AniketArora/Project-II",
+    githubLabel: "View Snek Exergame on GitHub",
+    layout: "Left"
+  },
+  {
+    title: "Krypto - Cryptocurrency charts",
+    description:
+      "A Webapp & App that visualizes the most popular cryptocurrencies at the moment. The goal was to make both projects look similar.",
+    labels: "Xamarin - Chart.js - Coinbase API - Micro-interactions",
+    imageSrc: "/assets/images/Krypto.png",
+    imageAlt: "Krypto cryptocurrency charting interface preview",
+    imageClass: "c-project__img--ml6",
+    githubUrl: "https://github.com/AniketArora/Krypto-CreateIII",
+    githubLabel: "View Krypto project on GitHub",
+    layout: "Right"
+  }
+];
+
+const otherProjects = [
+  {
+    title: "Apollo Fitness",
+    description: "A personalized fitness assistant (WIP) using AI agents to suggest exercises and recipes based on user preferences.",
+    labels: "Python - LangChain - PyTorch - OpenAI API",
+    githubUrl: "https://github.com/AniketArora",
+    githubLabel: "View Fitness AI Agent project on GitHub"
+  },
+  {
+    title: "Point",
+    description: "A POS system where you can manage stock, make payments, and order.",
+    labels: "Flutter - Work In Progress",
+    githubUrl: "https://github.com/AniketArora/Point",
+    githubLabel: "View Point project on GitHub"
+  },
+  {
+    title: "Quiz",
+    description: "A .NET site where you can play a quiz with friends. Includes a full auto-generated controller & repo.",
+    labels: "C# - .NET Core - Work In Progress",
+    githubUrl: "https://github.com/AniketArora/Project-Quiz-Backend",
+    githubLabel: "View Quiz project on GitHub"
+  },
+  {
+    title: "Fake News Database",
+    description: "A python server where you can connect clients to and see data.",
+    labels: "Python - Threading - NumPy",
+    githubUrl: "https://github.com/StijnVandendriessche1/project-2020-Aniket_Arora-Stijn_Vandendriessche",
+    githubLabel: "View Fake news database project on GitHub"
+  },
+  {
+    title: "Stadsbouwers",
+    description: "A website that I designed for a local builder.",
+    labels: "Adobe XD",
+    githubUrl: "https://github.com/Jonas-D-M/Stadsbouwers",
+    githubLabel: "View Stadsbouwers project on GitHub"
+  },
+  {
+    title: "Portfolio",
+    description: "My portfolio website that you are currently on.",
+    labels: "Adobe XD - Web - Work In Progress",
+    githubUrl: "https://github.com/AniketArora/Portfolio",
+    githubLabel: "View Portfolio project on GitHub"
+  },
+  {
+    title: "Daylight app",
+    description: "An assignment that I got for my course on User Interaction.",
+    labels: "Web - Micro-interactions",
+    githubUrl: "https://github.com/nmct-create3/daylight-app-AniketArora",
+    githubLabel: "View Daylight app project on GitHub"
+  }
+];
+
+const projectImageDimensions = {
+  width: 1284,
+  height: 738
+};
+
+export default function HomePage() {
   return (
     <>
       <ScrollNavbar />
@@ -173,7 +185,7 @@ export default function HomePage() {
           <a className="c-nav__item" href="#Contact">
             Contact
           </a>
-          <a className="c-nav__item c-nav__item--button" href="/Resume.pdf">
+          <a className="c-nav__item c-nav__item--button" href="/resume">
             Resume
           </a>
           <div className="c-nav__line"></div>
